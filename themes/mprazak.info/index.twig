@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Martin Pražák</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-light-green.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+    html { scroll-behavior: smooth; }
+  </style>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23799148-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23799148-1');
+  </script>
+</head>
+<body class="w3-light-grey w3-content" style="max-width:1600px" onload="
+  var s = 'moc.liamg@kazarp.nitram';
+  var e = s.split('').reverse().join('');
+  document.getElementById('email').innerHTML = e;
+  document.getElementById('email').href = 'mailto:'+e;
+">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:220px;" id="mySidebar"><br>
+  <div class="w3-container w3-center">
+    <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
+      <i class="fa fa-remove"></i>
+    </a>
+    <img src="assets/images/profile.png" style="width:45%;" class="w3-round"><br><br>
+    <h4><b>Martin <span class="w3-text-theme">Pražák</span></b></h4>
+    <p class="w3-text-grey">Publications, projects, stuff</p>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#projects" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-th-large fa-fw w3-margin-right"></i>PROJECTS</a>
+    <a href="#talks" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="far fa-comment-alt fa-fw w3-margin-right"></i>TALKS</a>
+    <a href="#publications" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fas fa-book-reader fa-fw w3-margin-right"></i>PUBLICATIONS</a>
+    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>ABOUT</a>
+  </div>
+  <div class="w3-panel w3-xlarge w3-center">
+    <a href="https://www.linkedin.com/in/martinprazak/"><i class="fab fa-linkedin-in w3-hover-opacity"></i></a>
+    <a href="https://github.com/martin-pr"><i class="fab fa-github w3-hover-opacity"></i></a>
+    <a href="https://stackoverflow.com/users/2854947/martin-pr"><i class="fab fa-stack-overflow w3-hover-opacity"></i></a>
+    <a href="https://launchpad.net/~martin-prazak"><i class="fa fa-box-open w3-hover-opacity"></i></a>
+  </div>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:220px">
+
+  <!-- Header -->
+  <header id="projects">
+    <a href="#"><img src="profile.png" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+    <div class="w3-container">
+    <h1 class="w3-text-theme"><b>Open Source Projects</b></h1>
+    </div>
+  </header>
+
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="assets/images/possumwood.png" alt="Possumwood" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p>
+          <div><b>Possumwood</b></div>
+        </p>
+        <p>
+          Possumwood is a graph-based procedural authoring tool, in concept not dissimilar to popular CG packages like Houdini, Blender or Maya. It is intended to serve as a sandbox for computer graphics algorithms and libraries, providing a user-friendly and coding-free UI for libraries that would otherwise be inaccessible for an average user.
+        </p>
+        <p>
+          <a class="w3-button w3-white" href="https://github.com/martin-pr/possumwood"><i class="fab fa-github w3-margin-right"></i>Github</a>
+          <a class="w3-button w3-white" href="https://launchpad.net/~martin-prazak/+archive/ubuntu/possumwood"><i class="fa fa-box-open w3-margin-right"></i>Launchpad PPA</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Header -->
+  <header id="talks">
+    <a href="#"><img src="profile.png" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+    <div class="w3-container">
+    <h1 class="w3-text-theme"><b>Industry Talks</b></h1>
+    </div>
+  </header>
+
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+     <img src="assets/images/siggraph2019.png" alt="Siggraph 2019" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p>
+          <div><b>From Comic Book to Movie Screen: Achieving symbiosis between Rigging and Creature Effects for Venom</b></div>
+          <div>Charlie Banks, William Gabriele, Marco Dambros, Erica Vigilante, Jesus R Nieto, Martin Pražák, and Sylvain Brugnot, <span class="w3-text-theme">SIGGRAPH 2019 Talks</span></div>
+        </p>
+        <p>The primary challenge at the heart of Visual Effects lies in the ability
+          to translate the director’s creative brief into compelling visuals
+          using a combination of art and technology. In the case of Venom a
+          key requirement was to keep the character design as faithful to the
+          comic books as possible. This talk describes the challenges tackled
+          by the Rigging, Effects, and R&D departments at DNEG in order to
+          bring this classic antihero to life in a photorealistic manner.
+        </p>
+        <p>
+          <a class="w3-button w3-white" href="assets/siggraph2019.pdf"><i class="far fa-file-pdf w3-margin-right"></i>Abstract</a>
+          <a class="w3-button w3-white" href="https://dl.acm.org/citation.cfm?id=3328209"><i class="fas fa-external-link-alt w3-margin-right"></i>ACM Link</a>
+        </p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+     <img src="assets/images/siggraph2018.png" alt="Siggraph 2018" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p>
+          <div><b>Taming the Swarm: Rippers on Pacific Rim Uprising</b></div>
+          <div>Martin Prazak, Damien Maupu, Mungo Pay, Muhittin Bilginer, Aleksandar Atanasov, Cristobal Infante Esquivel, <span class="w3-text-theme">SIGGRAPH 2018 Talks</span></div>
+        </p>
+        <p>The primary challenge at the heart of Visual Effects lies in the ability
+          to translate the director’s creative brief into compelling visuals
+          using a combination of art and technology. In the case of Venom a
+          key requirement was to keep the character design as faithful to the
+          comic books as possible. This talk describes the challenges tackled
+          by the Rigging, Effects, and R&D departments at DNEG in order to
+          bring this classic antihero to life in a photorealistic manner.
+        </p>
+        <p>
+          <a class="w3-button w3-white" href="assets/pacific_rim-small.pdf"><i class="far fa-file-pdf w3-margin-right"></i>Abstract</a>
+          <a class="w3-button w3-white" href="https://dl.acm.org/citation.cfm?id=3214809"><i class="fas fa-external-link-alt w3-margin-right"></i>ACM Link</a>
+        </p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="assets/images/siggraph2017.png" alt="Siggraph 2017 Houdini" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p>
+          <div><b>Artist-driven Crowd Authoring Tools</b></div>
+          <div>Damien Maupu, Emanuele Goffredo, Nile Hylton, Mungo Pay, Martin Prazak, <span class="w3-text-theme">SIGGRAPH 2017 Talks</span></div>
+        </p>
+        <p>
+          When constructing shots of non-human crowds that exhibit complex behaviors, the standard approach based on the well-established rules of boid simulation is likely to fall short when used for a group of characters with "intent". In Pacific Rim Uprising, Double Negative VFX tackled the challenge of producing a large crowd of highly articulated robotic creatures performing the complex and coordinated task of "assembling" a mega-Kaiju. This task required a number of innovative approaches to both crowd authoring and rendering, and close collaboration between the RnD and artists.
+        </p>
+        <p>
+          <a class="w3-button w3-white" href="assets/houdini-small.pdf"><i class="far fa-file-pdf w3-margin-right"></i>Abstract</a>
+          <a class="w3-button w3-white" href="https://dl.acm.org/citation.cfm?id=3085035"><i class="fas fa-external-link-alt w3-margin-right"></i>ACM Link</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+     <img src="assets/images/siggraph2017pipeline.png" alt="Siggraph 2017 Pipeline" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p>
+          <div><b>Flexible Pipeline for Crowd Production</b></div>
+          <div>Mungo Pay, Damien Maupu, Martin Prazak, <span class="w3-text-theme">SIGGRAPH 2017 Talks</span></div>
+        </p>
+        <p>
+          The complexity of crowd shots can vary greatly, from simple vignetting tasks that add life to an environment, to large and complex battle sequences involving thousands of characters. For this reason, a “one size fits all” crowd solution might not be optimal, both in terms of design and usability, but also allocation of crew. In this talk we present a suite of tools, developed across multiple platforms, each optimised for specific crowd tasks. These are underpinned by a data interchange library to allow for modification at any stage of the pipeline.
+        </p>
+        <p>
+          <a class="w3-button w3-white" href="assets/pipeline-small.pdf"><i class="far fa-file-pdf w3-margin-right"></i>Abstract</a>
+          <a class="w3-button w3-white" href="https://dl.acm.org/citation.cfm?id=3085042"><i class="fas fa-external-link-alt w3-margin-right"></i>ACM Link</a>
+        </p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="assets/images/siggraph2015.png" alt="Siggraph 2015" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p>
+          <div><b>Data-driven Background Crowds in Exodus: Gods and Kings</b></div>
+          <div>Martin Prazak, Mungo Pay, Damien Maupu, Davide Vercelli, Ian Masters, <span class="w3-text-theme">SIGGRAPH 2015 Talks</span></div>
+        </p>
+        <p>
+          Large virtual worlds require large virtual crowds. One of the main themes of Exodus is a clash of ancient civilisations, represented via virtual background crowds in a large number of shots. To generate these crowds, we used an in-house crowd solution, whose development was aimed at background crowds for photorealistic scenes.
+        </p>
+        <p>
+          VFX crowds are subject to specific requirements, because they are used to enliven and extend crowd shots captured by a camera. Each shot consists of three layers – <i>hero characters</i> (usually real actors shot on set), <i>crowd-anim</i> (hand-animated) and <i>procedural background crowds</i>. To retain scene consistency, the background crowds must join seamlessly with other layers.
+        </p>
+        <p>
+          <a class="w3-button w3-white" href="assets/riot-small.pdf"><i class="far fa-file-pdf w3-margin-right"></i>Abstract</a>
+          <a class="w3-button w3-white" href="https://dl.acm.org/citation.cfm?id=2792553"><i class="fas fa-external-link-alt w3-margin-right"></i>ACM Link</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Header -->
+  <header id="publications">
+    <a href="#"><img src="profile.png" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+    <div class="w3-container">
+    <h1 class="w3-text-theme"><b>Academic Publications</b></h1>
+    </div>
+  </header>
+
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="assets/images/phd.png" alt="PhD" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p>
+          <div><b>Locomotion for Crowd Animation</b></p></div>
+          <div>Martin Prazak, <span class="w3-text-theme">PhD Dissertation, Trinity College Dublin, 2012</span></div>
+        </p>
+        <p>
+          Real-time computer animation is an essential part of modern computer games and virtual reality applications. While rendering provides the main part of what can be described as “visual experience”, it is the movement of the characters that gives the final impression of realism. Unfortunately, realistic human animation has proven to be a very hard challenge.
+        </p>
+        <p>
+          Some fields of computer graphics have a compact and precise mathematical description of the underlying principles. Rendering, for example, has the rendering equation, and each realistic rendering technique provides its approximate solution. Due to its highly complex nature, character animation is not one of these fields. That is one of the reasons why even single character animation still provides significant research challenges. The challenges posed by a crowd simulator, required to populate a virtual world, are even larger. This is not only because of the large number of simultaneously displayed characters, which necessitate the use of level-of-detail approaches, but also the requirement of reactive behaviour, which can be provided only by a complex multi-level planning module.
+        </p>
+        <p>
+          In this thesis, we address the problem of human animation for crowds as a component of a crowd simulator.
+        </p>
+        <p>
+          <a class="w3-button w3-white" href="assets/dissertation-small.pdf"><i class="far fa-file-pdf w3-margin-right"></i>PhD Dissertation</a>
+        </p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="assets/images/sca2011.png" alt="SCA 2011" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p>
+          <div><b>Perceptual Evaluation of Footskate Cleanup</b></p></div>
+          <div>Martin Pražák, Ludovic Hoyet and Carol O’Sullivan, <span class="w3-text-theme">Proceedings of the 2011 ACM SIGGRAPH/Eurographics Symposium on Computer Animation, 287-294, 2011</span></div>
+        </p>
+        <p>
+          When animating virtual humans for real-time applications such as games and virtual reality, animation systems often have to edit motions in order to be responsive. In many cases, contacts between the feet and the ground are not (or cannot be) properly enforced, resulting in a disturbing artifact know as footsliding or footskate. In this paper, we explore the perceptibility of this error and show that participants can perceive even very low levels of footsliding (<21mm in most conditions). We then explore the visual fidelity of animations where footskate has been cleaned up using two different methods. We found that corrected animations were always preferred to those with footsliding, irrespective of the extent of the correction required. We also determined that a simple approach of lengthening limbs was preferred to a more complex approach using IK fixes and trajectory smoothing.
+        </p>
+        <p>
+          <a class="w3-button w3-white" href="assets/sca2011.pdf"><i class="far fa-file-pdf w3-margin-right"></i>Paper</a>
+          <a class="w3-button w3-white" href="assets/sca2011_video.avi"><i class="fas fa-video w3-margin-right"></i>Video</a>
+          <a class="w3-button w3-white" href="http://portal.acm.org/citation.cfm?id=2019444"><i class="fas fa-external-link-alt w3-margin-right"></i>ACM Link</a>
+        </p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="assets/images/apgv2011.png" alt="APGV 2011" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p>
+          <div><b>Perceiving Human Motion Variety</b></p></div>
+          <div>Martin Pražák and Carol O’Sullivan, <span class="w3-text-theme">Applied Perception in Graphics and Visualisation, 2011</span></div>
+        </p>
+        <p>
+          In order to simulate plausible groups or crowds of virtual characters, it is important to ensure that the individuals in a crowd do not look, move, behave or sound identical to each other. Such obvious `cloning’ can be disconcerting and reduce the engagement of the viewer with an animated movie, virtual environment or game. In this paper, we focus in particular on the problem of motion cloning, i.e., where the motion from one person is used to animate more than one virtual character model. Using our database of motions captured from 83 actors (45M and 38F), we present an experimental framework for evaluating human motion, which allows both the static (e.g., skeletal structure) and dynamic aspects (e.g., walking style) of an animation to be controlled. This framework enables the creation of crowd scenarios using captured human motions, thereby generating simulations similar to those found in commercial games and movies, while allowing full control over the parameters that affect the perceived variety of the individual motions in a crowd. We use the framework to perform an experiment on the perception of characteristic walking motions in a crowd, and conclude that the minimum number of individual motions needed for a crowd to look varied could be as low as three. While the focus of this paper was on the dynamic aspects of animation, our framework is general enough to be used to explore a much wider range of factors that affect the perception of characteristic human motion.
+        </p>
+        <p>
+          <a class="w3-button w3-white" href="assets/apgv2011.pdf"><i class="far fa-file-pdf w3-margin-right"></i>Paper</a>
+          <a class="w3-button w3-white" href="https://dl.acm.org/citation.cfm?id=2077468"><i class="fas fa-external-link-alt w3-margin-right"></i>ACM Link</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="assets/images/i3d2010.png" alt="I3D 2010" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p>
+          <div><b>Moving Crowds: A Linear Animation System for Crowd Simulation</b></p></div>
+          <div>Martin Pražák, Ladislav Kavan, Rachel McDonnell, Simon Dobbyn and Carol O’Sullivan, <span class="w3-text-theme">Poster Proceedings, ACM SIGGRAPH Symposium on Interactive 3D Graphics and Games, 2010</span></div>
+        </p>
+        <p>
+          The animation of hundreds or even thousands of simultaneously displayed individuals is challenging because of the need for both motion variety and efficient runtime processing. We present a middle level-of-detail animation system optimised for handling large crowds which takes motion-capture data as input and automatically processes it to create a parametric model of human locomotion. The model is then used in a runtime system, driven by a linearised motion blending technique, which synthesises motions based on information from a motion-planning module. Compared to other animation methods, our technique provides significantly better runtime performance without compromising the visual quality of the result.
+        </p>
+        <p>
+          <a class="w3-button w3-white" href="assets/i3d_2010.pdf"><i class="far fa-file-pdf w3-margin-right"></i>Paper</a>
+          <a class="w3-button w3-white" href="https://dl.acm.org/citation.cfm?id=1730981"><i class="fas fa-external-link-alt w3-margin-right"></i>ACM Link</a>
+        </p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="assets/images/sa2010.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p>
+          <div><b>Perceptual Evaluation of Human Animation Timewarping</b></p></div>
+          <div>Martin Pražák, Rachel McDonnell and Carol O’Sullivan, <span class="w3-text-theme">ACM SIGGRAPH Asia 2010 Sketches, pages 30:1-30:2, 2010</span></div>
+        </p>
+        <p>
+          Understanding the perception of humanoid character motion can provide insights that will enable realism, accuracy, computational cost and data storage space to be optimally balanced. In this sketch we describe a preliminary perceptual evaluation of human motion timewarping, a common editing method for motion capture data. During the experiment, participants were shown pairs of walking motion clips, both timewarped and at their original speed, and asked to identify the real animation. We found a statistically significant difference between speeding up and slowing down, which shows that displaying clips at higher speeds produces obvious artifacts, whereas even significant reductions in speed were perceptually acceptable.
+        </p>
+        <p>
+          <a class="w3-button w3-white" href="assets/sa2010.pdf"><i class="far fa-file-pdf w3-margin-right"></i>Paper</a>
+          <a class="w3-button w3-white" href="http://portal.acm.org/citation.cfm?doid=1899950.1899980"><i class="fas fa-external-link-alt w3-margin-right"></i>ACM Link</a>
+        </p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="assets/images/sa2009.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p>
+          <div><b>Synchronized Real-time Multi-sensor Motion Capture System</b></p></div>
+          <div>Jonathan Ruttle, Michael Manzke, Martin Pražák and Rozenn Dahyot, <span class="w3-text-theme">SIGGRAPH Asia 2009 Sketches & Posters, pages 16-19, 2009</span></div>
+        </p>
+        <p>
+          This work addresses the challenge of synchronizing multiple sources of visible and audible information from a variety of devices, while capturing human motion in realtime. Video and audio data will be used to augment and enrich a motion capture database that will be released to the research community. While other such augmented motion capture databases exist [Black and Sigal 2006], the goal of this work is to build on these previous works. Critical areas of improvement are in the synchronization between cameras and synchronization between devices. Adding an array of audio recording devices to the setup will greatly expand the research potential of the database, and the positioning of the cameras will be varied to give greater flexibility. The augmented database will facilitate the testing and validation of human pose estimation and motion tracking techniques, among other applications. This sketch briefly describes some of the interesting challenges faced in setting up the pipeline for capturing the synchronized data and the novel approaches proposed to solve them.
+        </p>
+        <p>
+          <a class="w3-button w3-white" href="assets/sa2009.pdf"><i class="far fa-file-pdf w3-margin-right"></i>Paper</a>
+          <a class="w3-button w3-white" href="http://portal.acm.org/citation.cfm?id=1666828"><i class="fas fa-external-link-alt w3-margin-right"></i>ACM Link</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="assets/images/ei2009.png" alt="EI 2009" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p>
+          <div><b>A Perception Based Metric for Comparing Human Locomotion</b></p></div>
+          <div>Martin Pražák, Rachel McDonnell, Ladislav Kavan and Carol O’Sullivan, <span class="w3-text-theme">Proceedings of the 9th Irish Workshop on Computer Graphics, pages 75-80, 2009</span></div>
+        </p>
+        <p>
+          Metrics measuring differences between skeletal animation frames (poses) form the core of a large number of modern computer animation methods. A metric that accurately characterizes human motion perception could provide great advantages for these methods, by allowing the systems to focus exclusively on perceptually important aspects of the motion. In this paper we present a metric for human locomotion comparison, derived directly from the results of a perceptual experiment.
+        </p>
+        <p>
+          <a class="w3-button w3-white" href="assets/ei2009.pdf"><i class="far fa-file-pdf w3-margin-right"></i>Paper</a>
+        </p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="assets/images/sca2008.png" alt="SCA 2008" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p>
+          <div><b>Towards a Perceptual Metric for Comparing Human Motion</b></p></div>
+          <div>Martin Pražák, Rachel McDonnell, Ladislav Kavan and Carol O’Sullivan, <span class="w3-text-theme">Poster Proceedings, ACM SIGGRAPH/Eurographics Symposium on Computer Animation, pages 13-14, 2008</span></div>
+        </p>
+        <p>
+          Most of the commonly used approaches for editing human motion, such as motion graphs and motion blending, use some form of distance metric in order to compare character poses in keyframes. These metrics utilize a combination of three traditional methods – joint angular differences, dis- tances between points on an object and velocities of specified bodyparts. The presented method attempts to find a metric and its parameters (not limited to the usual Euclidean metric), which would match a dataset formed by a direct perceptual experiment as closely as possible. Previous meth- ods used peception for evaluation alone, but we use perception as the basis of our metric.
+        </p>
+        <p>
+          <a class="w3-button w3-white" href="assets/sca2008.pdf"><i class="far fa-file-pdf w3-margin-right"></i>Paper</a>
+        </p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="assets/images/cg2010.png" alt="CG 2010" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p>
+          <div><b>Rendering Fur Directly into Images</b></p></div>
+          <div>Tania Pouli, Martin Pražák, Pavel Zemcik, Diego Gutierrez and Erik Reinhard, <span class="w3-text-theme">Computers and Graphics, 24(5):612-620, 2010</span></div>
+        </p>
+        <p>
+          We demonstrate the feasibility of rendering fur directly into existing images, without the need to either painstakingly paint over all pixels, or to supply 3D geometry and lighting. We add fur to objects depicted in images by first estimating depth and lighting information and then re-rendering the resulting 2.5D geometry with fur. A brush-based interface is provided, allowing the user to control the positioning and appearance of fur, while all the interaction takes place in a 2D pipeline. The novelty of this approach lies in the fact that a complex, high-level image edit such as the addition of fur can yield perceptually plausible results, even in the presence of imperfect depth or lighting information.
+        </p>
+        <p>
+          <a class="w3-button w3-white" href="assets/cg2010.pdf"><i class="far fa-file-pdf w3-margin-right"></i>Paper</a>
+          <a class="w3-button w3-white" href="http://www.sciencedirect.com/science/article/pii/S0097849310000877"><i class="fas fa-external-link-alt w3-margin-right"></i>ScienceDirect Link</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="assets/images/masters.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p>
+          <div><b>Changing Object Appearance by Adding Fur</b></p></div>
+          <div>Martin Pražák, (supervisors – Erik Reinhard and Pavel Zemcik), <span class="w3-text-theme">Masters Thesis, Brno University of  Technology, 2008</span></div>
+        </p>
+        <p>
+          The aim of this thesis is to demonstrate the feasibility of rendering fur directly into existing images without the need to either painstakingly paint over all pixels, or to supply 3D geometry and lighting. The fur is added to objects depicted on images by first recovering depth and lighting information, and then re-rendering the resulting 2.5D geometry with fur. The novelty of this approach lies in the fact that complex high-level image edits, such as the addition of fur, can successfully yield perceptually plausible results, even constrained by imperfect depth and lighting information. A relatively large set of techniques involved in this work includes HDR imaging, shape-from-shading techniques, research on shape and lighting perception in images and photorealistic rendering techniques. The main purpose of this thesis is to prove the concept of the described approach. The main implementation language was C++ with usage of wxWidgets, OpenGL and libTIFF libraries, rendering was realised in 3Delight, a Renderman-compatible renderer, with the help of a set of custom shaders written in Renderman shading language.
+        </p>
+        <p>
+          <a class="w3-button w3-white" href="assets/thesis.pdf"><i class="far fa-file-pdf w3-margin-right"></i>Full Text</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <header id="about" class="w3-light-grey">
+    <a href="#"><img src="profile.png" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+    <div class="w3-container">
+    <h1 class="w3-text-theme"><b>About Me</b></h1>
+    </div>
+  </header>
+
+  <div class="w3-container w3-light-grey">
+    <p>R&D Supervisor at <a href="http://www.dneg.com">DNEG</a>, with particular interest in crowd simulation and data-driven character animation. I have 7 years of experience in the VFX industry, and hold a PhD in computer science (specialised in data-driven character animation for crowd simulation).</p>
+
+    <!-- Contact Section -->
+    <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
+      <div class="w3-quarter w3-dark-grey">
+        <p>
+          <i class="fa fa-download w3-small w3-text-light-grey"></i>
+          <a href="assets/cv.pdf">Download Resume</a>
+        </p>
+      </div>
+      <div class="w3-quarter w3-theme">
+        <p>
+          <i class="fa fa-envelope w3-small w3-text-light-grey"></i>
+          <a id="email" href="mailto:name@email.com">name@email.com</a>
+        </p>
+      </div>
+      <div class="w3-quarter w3-dark-grey">
+        <p>
+          <i class="fa fa-map-marker w3-small w3-text-light-grey"></i>
+          London, UK</p>
+      </div>
+      <div class="w3-quarter w3-theme">
+        <p>
+          <i class="fa fa-phone w3-small w3-text-light-grey"></i>
+          +44 751 431 8153
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-container w3-dark-grey">
+    <p>
+      This is a personal website. All opinions are mine, and do not represent that of my employer or any other organization.
+      Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a>
+    </p>
+  </footer>
+
+<!-- End page content -->
+</div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>

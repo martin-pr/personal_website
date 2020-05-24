@@ -1,0 +1,1078 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-US">
+
+<head>
+  <meta name="generator" content="Bluefish 2.0.2" />
+  <title>Perceptual Evaluation of Footskate Cleanup, SCA 2011</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="copyright" content="<b>Perceptual Evaluation of Footskate Cleanup</b> - Martin Prazak, Ludovic Hoyet, Carol O'Sullivan" />
+  <!--<meta name="duration" content="20" />-->
+  <link rel="stylesheet" href="styles/LaTeXMathML.standardarticle.css" type="text/css" />
+  <link rel="stylesheet" href="styles/slidy.css" type="text/css" />
+  <link rel="stylesheet" href="styles/sca.css" type="text/css" />
+  <script src="scripts/LaTeXMathML.js" charset="utf-8" type="text/javascript"></script>
+  <script src="scripts/slidy.js" charset="utf-8" type="text/javascript"></script>
+  <script src="scripts/jquery-1.6.2.min.js" charset="utf-8" type="text/javascript"></script>
+  <script src="scripts/flowplayer-3.2.6.min.js" charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+
+<!--<div class="background">
+  <img alt="" id="head-icon" src="graphics/icon-blue.png" />
+  <img alt="W3C logo" id="head-logo-fallback" src="graphics/w3c-logo-white.gif" />
+</div>-->
+
+<div class="background slanty">
+<img src="graphics/w3c-logo-slanted.jpg" alt="slanted W3C logo" />
+</div>
+
+<!--********************************************************************************************************************************
+    ********************************************************************************************************************************
+    ********************************************************************************************************************************-->
+
+<div class="slide">
+  <h1 style="
+    position: absolute; 
+    top: 25%; 
+    padding: 0.3em 2em 0.3em 1em;
+    text-align:left;
+    font-size: 2.5em;
+    display:inline-block;
+    margin: 0;
+  ">perceptual evaluation <br>of footskate cleanup</h1>
+   
+  <p style="text-align:left;position: absolute; bottom: 1em;padding:0 0 1em 2.5em; margin: 0;">
+    <b>Martin Prazak<br>Ludovic Hoyet<br>Carol O'Sullivan</b>
+    <br><br>
+    Graphics, Vision and Visualisation Group<br>
+    Department of Computer Science and Statistics<br>
+    Trinity College Dublin, Ireland
+  </p>
+</div>
+
+
+<div class="slide">
+  <h1>outline</h1>
+  <img src="images/outline.png">
+  <ul>
+    <li>introduction</li>
+    <li>background</li>
+    <li>stimuli</li>
+    <li>baseline experiment
+      <ul><li>how much footsliding is perceivable?</li></ul>
+    </li>
+    <li>footskate cleanup experiment
+      <ul><li>do we need to fix it? and how?</li></ul>
+    </li>
+    <li>conclusions and future work</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>introduction</h1>
+  <h2>footsliding</h2>
+  <ul>
+    <li>very common animation artifact
+      <ul>
+        <li>present in almost all marketed VR applications and games</li>
+      </ul>
+    </li>
+    <li>many different causes
+      <ul>
+        <li>motion capture processing artifacts</li>
+        <li>motion editing</li>
+        <li>motion blending</li>
+        <li>retargeting</li>
+        <li>character responsiveness constraints</li>
+      </ul>
+    </li>
+    <li>but the visible result is always similar:<br> <b>foot movement inconsistent with the expected foot-ground interactions</b></li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>introduction</h1>
+  <h2>footsliding</h2>
+	<a href="videos/fs_nofootsliding.flv" id="player1"></a> 
+	<script>
+		flowplayer("player1", "flowplayer-3.2.7.swf", {
+      clip: {
+ 			    autoplay: true,
+        onCuepoint: [[100], function () { this.getPlugin("play").css({opacity: 0}); }],
+        onBeforeFinish: function () { this.getPlugin("play").css({opacity: 0}); return false; }
+      },
+      plugins: { controls: null }
+		});
+	</script>
+
+	<a href="videos/fs_footsliding.flv" id="player2"></a> 
+	<script>
+		flowplayer("player2", "flowplayer-3.2.7.swf", {
+      clip: {
+ 			    autoplay: true,
+        onCuepoint: [[100], function () { this.getPlugin("play").css({opacity: 0}); }],
+        onBeforeFinish: function () { this.getPlugin("play").css({opacity: 0}); return false; }
+      },
+      plugins: { controls: null }
+		});
+	</script>
+</div>
+
+
+<div class="slide">
+  <h1>background</h1>
+  <ul>
+    <li>footstep detection:
+      <ul>
+        <li>LeCallennec, Boulic, 2006, <i>Robusing kinematic constraint detection for motion data</i></li>
+      </ul>
+    </li>
+    <li>footstep cleanup:
+      <ul>
+        <li>Kovar, Schreiner, Gleicher, 2002, <i>Footskate cleanup for motion capture editing</i></li>
+      </ul>
+    </li>
+    <li>perception of artifacts in motion:
+      <ul>
+        <li>Harrison, Rensink, Panne, 2004, <i>Obscuring length changes during animated motion</i></li>
+      </ul>
+    </li>  
+  
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>stimuli</h1>
+  <h2>motion capture database</h2>
+  <img src="images/markerset.png" alt="" >
+  <ul>
+    <li>Motion Capture Database:
+      <ul>
+        <li>83 actors</li>
+        <li>100+ motions per actor</li>
+        <li>skeleton with 21 bones, standardized structure</li>
+        <li>markerset with 56 markers</li>
+        <li>biometric data</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>stimuli</h1>
+  <h2>motion capture database</h2>
+  <img src="images/markerset.png" alt="" >
+  <ul>
+    <li class="gray">Motion Capture Database:
+      <ul>
+        <li>83 actors</li>
+        <li>100+ motions per actor</li>
+        <li>skeleton with 21 bones, standardized structure</li>
+        <li>markerset with 56 markers</li>
+        <li>biometric data</li>
+      </ul>
+    </li>
+    <li>selected motions:
+      <ul>
+        <li>10 actors (5 male, 5 female) with normal body build</li>
+        <li>one straight walk, close to average walking speed of the actor</li>
+       </ul>
+    <li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>stimuli</h1>
+  <h2>motion preprocessing</h2>
+  <ul>
+    <li>captured motions are natural, but not perfect
+      <ul>
+        <li>different actors = different skeletons</li>
+        <li>retargeting artifacts</li>
+        <li>no explicit constraint data</li>
+        <li>measuring physical objects - noise, processing artifacts...</li>
+        <li>human skeleton is not rigid</li>
+      </ul>
+    </li>
+    <li>but we are going to ask users about the motion quality => <br><b>our motions have to be as perfect as possible</b></li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>stimuli</h1>
+  <h2>motion preprocessing - different skeletons</h2>
+  <ul>
+    <li>avoid the problem of different skeletons / motion retargeting completely - <b>build a character that reflects the actor's skeleton</b></li>    
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>stimuli</h1>
+  <h2>motion preprocessing - different skeletons</h2>
+  <img src="images/character_skeleton.png" alt="" >
+  <ul>
+    <li class="gray">avoid the problem of different skeletons / motion retargeting completely - <b>build a character that reflects the actor's skeleton</b></li>
+    <li>start with the actor's skeletal data (fully contained in the motion capture clip)
+      <ul>
+        <li>not good enough for perception - Hodgins et al. 1998</li>
+      </ul>
+    </li>    
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>stimuli</h1>
+  <h2>motion preprocessing - different skeletons</h2>
+  <img src="images/character_boxes.png" alt="" >
+  <ul>
+    <li class="gray">avoid the problem of different skeletons / motion retargeting completely - <b>build a character that reflects the actor's skeleton</b></li>
+    <li class="gray">start with the actor's skeletal data (fully contained in the motion capture clip)
+      <ul>
+        <li>not good enough for perception - Hodgins et al. 1998</li>
+      </ul>
+    </li>    
+    <li>build a box model based on this data</li>    
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>stimuli</h1>
+  <h2>motion preprocessing - different skeletons</h2>
+  <img src="images/character_subdivided.png" alt="" >
+  <ul>
+    <li class="gray">avoid the problem of different skeletons / motion retargeting completely - <b>build a character that reflects the actor's skeleton</b></li>
+    <li class="gray">start with the actor's skeletal data (fully contained in the motion capture clip)
+      <ul>
+        <li>not good enough for perception - Hodgins et al. 1998</li>
+      </ul>
+    </li>    
+    <li class="gray">build a box model based on this data</li>
+    <li>use Catmull-Clarke subdivision to create a <b>mannequin character</b></li>    
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>stimuli</h1>
+  <h2>motion preprocessing</h2>
+  <img src="images/cleanup.png" alt="" >
+  <ul>
+    <li><b>constraints detection:</b>
+      <ul>
+        <li>based on Le Callennec and Boulic, 2006</li>
+        <li>detecting common rotational points / axes of joints</li>
+        <li>manually adjusted parameters</li>
+        <li>manually checked for accuracy</li>
+      </ul>
+    </li>
+    <li><b>motion cleanup:</b>
+      <ul>
+        <li>based on Kovar et al., 2002</li>
+      </ul>
+    </li>  
+  
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>baseline experiment</h1>
+  <h2>motivation and aim</h2>
+  <ul>
+    <li>determine the <b>footsliding saliency</b></li>
+    <li>participants are <b>aware of its presence</b></li>
+    <li>find the threshold</li>
+    <li>find the effect of the environment properties</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>baseline experiment</h1>
+  <h2>footsliding model</h2>
+  <ul>
+    <li>we need a <b>controllable model</b> of footsliding artifacts
+      <ul>
+        <li>only smooth changes, no other artifacts introduced</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>baseline experiment</h1>
+  <h2>footsliding model</h2>
+  <ul>
+    <li class="gray">we need a <b>controllable model</b> of footsliding artifacts
+      <ul>
+        <li>only smooth changes, no other artifacts introduced</li>
+      </ul>
+    </li>
+    <li><b>front footskate</b>
+      <ul>
+        <li>forward root movement <b>multiplied</b> by a constant value</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>baseline experiment</h1>
+  <h2>footsliding model</h2>
+  <ul>
+    <li class="gray">we need a <b>controllable model</b> of footsliding artifacts
+      <ul>
+        <li>only smooth changes, no other artifacts introduced</li>
+      </ul>
+    </li>
+    <li class="gray"><b>front footskate</b>
+      <ul>
+        <li>forward root movement <b>multiplied</b> by a constant value</li>
+      </ul>
+    </li>
+    <li><b>side footskate</b>
+      <ul>
+        <li>a <b>sinus</b> function displacement added to the side root movement</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>baseline experiment</h1>
+  <h2>experiment design</h2>
+  <ul>
+    <li>each trial used one of the 10 motions, randomly selected</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>baseline experiment</h1>
+  <h2>experiment design</h2>
+  <ul>
+    <li class="gray">each trial used one of the 10 motions, randomly selected</li>
+    <li><b>two blocks</b> (separate):</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>baseline experiment</h1>
+  <h2>experiment design</h2>
+  <img src="images/ground_grid.png" class="bottomright border" >
+  <ul>
+    <li class="gray">each trial used one of the 10 motions, randomly selected</li>
+    <li><span class="gray"><b>two blocks</b> (separate):</span>
+      <ul>
+        <li>grid environment</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>baseline experiment</h1>
+  <h2>experiment design</h2>
+  <img src="images/ground_plain.png" class="bottomright border" >
+  <ul>
+    <li class="gray">each trial used one of the 10 motions, randomly selected</li>
+    <li><span class="gray"><b>two blocks</b> (separate):</span>
+      <ul>
+        <li class="gray">grid environment</li>
+        <li>neutral environment</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>baseline experiment</h1>
+  <h2>experiment design</h2>
+  <ul>
+    <li class="gray">each trial used one of the 10 motions, randomly selected</li>
+    <li class="gray"><b>two blocks</b> (separate):
+      <ul>
+        <li>grid environment</li>
+        <li>neutral environment</li>
+      </ul>
+    </li>
+    <li>each block consists of <b>two parts</b>:</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>baseline experiment</h1>
+  <h2>experiment design</h2>
+	<a href="videos/example_front.flv" id="player3" class="bottomright"></a> 
+	<script>
+		flowplayer("player3", "flowplayer-3.2.7.swf", {
+      clip: {
+ 			    autoplay: true,
+        onCuepoint: [[100], function () { this.getPlugin("play").css({opacity: 0}); }],
+        onBeforeFinish: function () { this.getPlugin("play").css({opacity: 0}); return false; }
+      },
+      plugins: { controls: null }
+		});
+	</script>
+  <ul>
+    <li class="gray">each trial used one of the 10 motions, randomly selected</li>
+    <li class="gray"><b>two blocks</b> (separate):
+      <ul>
+        <li>grid environment</li>
+        <li>neutral environment</li>
+      </ul>
+    </li>
+    <li><span class="gray">each block consists of <b>two parts</b>:</span>
+      <ul>
+        <li>front footskating, side view</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>baseline experiment</h1>
+  <h2>experiment design</h2>
+	<a href="videos/example_side.flv" id="player4" class="bottomright"></a> 
+	<script>
+		flowplayer("player4", "flowplayer-3.2.7.swf", {
+      clip: {
+ 			    autoplay: true,
+        onCuepoint: [[100], function () { this.getPlugin("play").css({opacity: 0}); }],
+        onBeforeFinish: function () { this.getPlugin("play").css({opacity: 0}); return false; }
+      },
+      plugins: { controls: null }
+		});
+	</script>
+  <ul>
+    <li class="gray">each trial used one of the 10 motions, randomly selected</li>
+    <li class="gray"><b>two blocks</b> (separate):
+      <ul>
+        <li>grid environment</li>
+        <li>neutral environment</li>
+      </ul>
+    </li>
+    <li><span class="gray">each block consists of <b>two parts</b>:</span>
+      <ul>
+        <li class="gray">front footskating, side view</li>
+        <li>side footskating, front view</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>baseline experiment</h1>
+  <h2>experiment design</h2>
+  <ul>
+    <li class="gray">each trial used one of the 10 motions, randomly selected</li>
+    <li class="gray"><b>two blocks</b> (separate):
+      <ul>
+        <li>grid environment</li>
+        <li>neutral environment</li>
+      </ul>
+    </li>
+    <li class="gray">each block consists of <b>two parts</b>:
+      <ul>
+        <li>front footskating, side view</li>
+        <li>side footskating, front view</li>
+      </ul>
+    </li>
+    <li>display setup - realtime rendering, 60Hz</li>
+  </ul>
+</div>
+
+
+<div class="slide">
+  <h1>baseline experiment</h1>
+  <h2>experiment design</h2>
+  <ul>
+    <li>the question asked: <b>"Is the character footsliding?"</b>
+      <ul>
+        <li>both formal and informal description of what footsliding is provided</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>baseline experiment</h1>
+  <h2>experiment design</h2>
+  <ul>
+    <li class="gray">the question asked: <b>"Is the character footsliding?"</b>
+      <ul>
+        <li>both formal and informal description of what footsliding is provided</li>
+      </ul>
+    </li>
+    <li>experiment participants:
+      <ul>
+        <li>grid environment block - 9 participants (2F, 7M)</li>
+        <li>neutral environment block - 14 participants (5F, 9M)</li>
+      </ul>
+    </li>
+    <li>maximum experiment run time - 20 minutes</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>baseline experiment</h1>
+  <h2>experiment design</h2>
+  <ul>
+    <li class="gray">the question asked: <b>"Is the character footsliding?"</b>
+      <ul>
+        <li>both formal and informal description of what footsliding is provided</li>
+      </ul>
+    </li>
+    <li class="gray">experiment participants:
+      <ul>
+        <li>grid environment block - 9 participants (2F, 7M)</li>
+        <li>neutral environment block - 14 participants (5F, 9M)</li>
+      </ul>
+    </li>
+    <li class="gray">maximum experiment run time - 20 minutes</li>
+    <li>two <b>adaptive staircases</b> (Garcia-Perez) <div style="margin-top: 1em;;"> (<a href="images/staircase.svg" target="newwin">link</a>)<div>
+  </ul>
+</div>
+
+
+<div class="slide">
+  <h1>baseline experiment</h1>
+  <h2>stimuli example</h2>
+	<a href="videos/grid_front_1.038_JND75.flv" id="exp1exa1" class="fullscreen"></a> 
+	<script>
+		flowplayer("exp1exa1", "flowplayer-3.2.7.swf", {
+      clip: {
+ 			    autoplay: true,
+        onCuepoint: [[100], function () { this.getPlugin("play").css({opacity: 0}); }],
+        onBeforeFinish: function () { this.getPlugin("play").css({opacity: 0}); return false; }
+      },
+      plugins: { controls: null }
+		});
+	</script>
+</div>
+
+<div class="slide">
+  <h1>baseline experiment</h1>
+  <h2>stimuli example</h2>
+	<a href="videos/example_front.flv" id="exp1exa2" class="fullscreen"></a> 
+	<script>
+		flowplayer("exp1exa2", "flowplayer-3.2.7.swf", {
+      clip: {
+ 			    autoplay: true,
+        onCuepoint: [[100], function () { this.getPlugin("play").css({opacity: 0}); }],
+        onBeforeFinish: function () { this.getPlugin("play").css({opacity: 0}); return false; }
+      },
+      plugins: { controls: null }
+		});
+	</script>
+</div>
+
+<div class="slide">
+  <h1>baseline experiment</h1>
+  <h2>stimuli example</h2>
+	<a href="videos/example_side.flv" id="exp1exa3" class="fullscreen"></a> 
+	<script>
+		flowplayer("exp1exa3", "flowplayer-3.2.7.swf", {
+      clip: {
+ 			    autoplay: true,
+        onCuepoint: [[100], function () { this.getPlugin("play").css({opacity: 0}); }],
+        onBeforeFinish: function () { this.getPlugin("play").css({opacity: 0}); return false; }
+      },
+      plugins: { controls: null }
+		});
+	</script>
+</div>
+
+
+<div class="slide">
+  <h1>baseline experiment results</h1>
+  <h2>evaluation method</h2>
+  <ul>
+    <li><b>logistic psychometric curve</b> fitted into each participant's data (separated by the part)
+      <ul><li>psignifit Matlab toolbox</li></ul>
+    </li>
+    <li>afterwards, the data were merged to provide an overall curve</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>baseline experiment results</h1>
+  <h2>final graphs</h2>
+  <img src="images/curves1.svg" class="video">
+</div>
+
+<div class="slide">
+  <h1>baseline experiment results</h1>
+  <h2>final graphs</h2>
+  <img src="images/curves2.svg" class="video">
+</div>
+
+<div class="slide">
+  <h1>footskate cleanup experiment</h1>
+  <h2>motivation and aim</h2>
+  <ul>
+    <li>now we know that the perceptual thresholds for footsliding are quite low</li>
+    <li><b>shall we correct the footsliding?</b> Or will the correction make the motion quality even worse?</li>
+    <li>and if we choose to correct, <b>how?</b></li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>footskate cleanup experiment</h1>
+  <h2>cleanup methods</h2>
+  <ul>
+    <li>not many methods in literature, we choose to use two:</li>
+    <li>method introduced by Kovar et al., 2002:
+      <ul>
+        <li>comprehensive method, state-of-the-art</li>
+        <li>root displacement, smoothing, leg IK, leg lengthening</li>
+      </ul>
+    </li>
+    <li>lengthening only
+      <ul>
+        <li>significantly simpler (last step of the previous method only)</li>
+        <li>based on Harrison et al - limb lengthening up to 20\% might go unnoticed</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>footskate cleanup experiment</h1>
+  <h2>cleanup methods</h2>
+  <ul>
+    <li class="gray">not many methods in literature, we choose to use two:</li>
+    <li class="gray">method introduced by Kovar et al., 2002:
+      <ul>
+        <li>comprehensive method, state-of-the-art</li>
+        <li>root displacement, smoothing, leg IK, leg lengthening</li>
+      </ul>
+    </li>
+    <li class="gray">lengthening only
+      <ul>
+        <li>significantly simpler (last step of the previous method only)</li>
+        <li>based on Harrison et al - limb lengthening up to 20\% might go unnoticed</li>
+      </ul>
+    </li>
+    <li>we will refer to these methods as:
+      <ul>
+        <li><b>U</b> - uncorrected</li>
+        <li><b>K</b> - Kovar's correction method</li>
+        <li><b>L</b> - lengthening correction</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+
+<div class="slide">
+  <h1>footskate cleanup experiment</h1>
+  <h2>experiment design</h2>
+  <ul>
+    <li>focusing on <b>front footsliding</b> only
+      <ul>
+        <li>mode common in VR applications</li>
+        <li>a price for responsiveness</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>footskate cleanup experiment</h1>
+  <h2>experiment design</h2>
+  <img src="images/fixup_stimuli.png" style="height: 40%;border: solid 1px black; margin-left: 1em;">
+  <ul>
+    <li class="gray">focusing on <b>front footsliding</b> only
+      <ul>
+        <li>mode common in VR applications</li>
+        <li>a price for responsiveness</li>
+      </ul>
+    </li>
+    <li><b>constant stimuli 2AFC</b> design</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>footskate cleanup experiment</h1>
+  <h2>experiment design</h2>
+  <img src="images/fixup_stimuli.png" style="height: 40%;border: solid 1px black; margin-left: 1em;">
+  <ul>
+    <li class="gray">focusing on <b>front footsliding</b> only
+      <ul>
+        <li>mode common in VR applications</li>
+        <li>a price for responsiveness</li>
+      </ul>
+    </li>
+    <li><span  class="gray"><b>constant stimuli 2AFC</b> design</span>
+      <ul>
+        <li>displaying <b>two</b> motions together, differing only in the <b>correction method</b> used (U, K or L)</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>footskate cleanup experiment</h1>
+  <h2>experiment design</h2>
+  <img src="images/fixup_stimuli.png" style="height: 40%;border: solid 1px black; margin-left: 1em;">
+  <ul>
+    <li class="gray">focusing on <b>front footsliding</b> only
+      <ul>
+        <li>mode common in VR applications</li>
+        <li>a price for responsiveness</li>
+      </ul>
+    </li>
+    <li><span class="gray"><b>constant stimuli 2AFC</b> design</span>
+      <ul>
+        <li class="gray">displaying <b>two</b> motions together, differing only in the <b>correction method</b> used (U, K or L)</li>
+        <li>participants asked to select <b>the most natural motion</b> of the two</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>footskate cleanup experiment</h1>
+  <h2>experiment design</h2>
+  <img src="images/fixup_stimuli.png" style="height: 40%;border: solid 1px black; margin-left: 1em;">
+  <ul>
+    <li class="gray">focusing on <b>front footsliding</b> only
+      <ul>
+        <li>mode common in VR applications</li>
+        <li>a price for responsiveness</li>
+      </ul>
+    </li>
+    <li><span  class="gray"><b>constant stimuli 2AFC</b> design</span>
+      <ul>
+        <li class="gray">displaying <b>two</b> motions together, differing only in the <b>correction method</b> used (U, K or L)</li>
+        <li class="gray">participants asked to select <b>the most natural motion</b> of the two</li>
+        <li>canonical viewpoint</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>footskate cleanup experiment</h1>
+  <h2>factors</h2>
+  <ul>
+    <li><b>direction</b>:
+      <ul>
+        <li>gliding (g)</li>
+        <li>moonwalking (m)</li>
+      </ul>
+    </li>
+    <li><b>footsliding level</b> (derived from baseline experiment results):
+      <ul>
+        <li style="">50\% 
+          <span style="position: absolute; right: 55%;width: 20%;text-align: right;">\~ 84mm (g),</span>
+          <span style="position: absolute; right: 35%;width: 20%;text-align: right;">\~ 21mm (m)</span>
+        </li>
+        <li>75\% 
+          <span style="position: absolute; right: 55%;width: 20%;text-align: right;">\~ 111mm (g),</span>
+          <span style="position: absolute; right: 35%;width: 20%;text-align: right;">\~ 30mm (m)</span>
+        </li>
+        <li>99\% 
+          <span style="position: absolute; right: 55%;width: 20%;text-align: right;">\~ 196mm (g),</span>
+          <span style="position: absolute; right: 35%;width: 20%;text-align: right;">\~ 60mm (m)</span>
+        </li>
+      </ul>
+    </li>
+    <li><b>comparisons</b>:
+      <ul>
+        <li>U-K</li>
+        <li>U-L</li>
+        <li>K-L</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>footskate cleanup experiment</h1>
+  <h2>stimuli examples (left-U, right-K, +99\%)</h2>
+	<a href="videos/fixups_lUrK_1.2542.flv" id="exp2exa1" class="fullscreen"></a> 
+	<script>
+		flowplayer("exp2exa1", "flowplayer-3.2.7.swf", {
+      clip: {
+ 			    autoplay: true,
+        onCuepoint: [[100], function () { this.getPlugin("play").css({opacity: 0}); }],
+        onBeforeFinish: function () { this.getPlugin("play").css({opacity: 0}); return false; }
+      },
+      plugins: { controls: null }
+		});
+	</script>
+</div>
+
+<div class="slide">
+  <h1>footskate cleanup experiment</h1>
+  <h2>stimuli examples (left-L, right-U, -99\%)</h2>
+	<a href="videos/fixups_lLrU_0.9182.flv" id="exp2exa2" class="fullscreen"></a> 
+	<script>
+		flowplayer("exp2exa2", "flowplayer-3.2.7.swf", {
+      clip: {
+ 			    autoplay: true,
+        onCuepoint: [[100], function () { this.getPlugin("play").css({opacity: 0}); }],
+        onBeforeFinish: function () { this.getPlugin("play").css({opacity: 0}); return false; }
+      },
+      plugins: { controls: null }
+		});
+	</script>
+</div>
+
+<div class="slide">
+  <h1>footskate cleanup experiment</h1>
+  <h2>stimuli examples (left-K, right-L, +99\%)</h2>
+	<a href="videos/fixups_lKrL_1.2542.flv" id="exp2exa3" class="fullscreen"></a> 
+	<script>
+		flowplayer("exp2exa3", "flowplayer-3.2.7.swf", {
+      clip: {
+ 			    autoplay: true,
+        onCuepoint: [[100], function () { this.getPlugin("play").css({opacity: 0}); }],
+        onBeforeFinish: function () { this.getPlugin("play").css({opacity: 0}); return false; }
+      },
+      plugins: { controls: null }
+		});
+	</script>
+</div>
+
+<div class="slide">
+  <h1>footskate cleanup experiment</h1>
+  <h2>stimuli examples (left-L, right-K, extreme example)</h2>
+	<a href="videos/fixups_lLrK_1.6.flv" id="exp2exa4" class="fullscreen"></a> 
+	<script>
+		flowplayer("exp2exa4", "flowplayer-3.2.7.swf", {
+      clip: {
+ 			    autoplay: true,
+        onCuepoint: [[100], function () { this.getPlugin("play").css({opacity: 0}); }],
+        onBeforeFinish: function () { this.getPlugin("play").css({opacity: 0}); return false; }
+      },
+      plugins: { controls: null }
+		});
+	</script>
+</div>
+
+<div class="slide">
+  <h1>footskate cleanup experiment</h1>
+  <h2>experiment run</h2>
+  <ul>
+    <li>12 volunteers (3F, 9M)</li>
+    <li>no explicit trial time limit</li>
+    <li>maximum participant's running time - approx. 15 minutes</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>footskate cleanup experiment</h1>
+  <h2>results evaluation</h2>
+  <ul>
+    <li>the collected data contain only <b>comparative data</b>, forming two distinct sets:
+      <ul>
+        <li>uncorrected motions compared to corrected motions (U-K, U-L)</li>
+        <li>direct comparison of corrected motions (K-L)</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>footskate cleanup experiment</h1>
+  <h2>to correct or not to correct</h2>
+  <img src="images/UK-UL.svg">
+  <ul>
+    <li>t-test against 50\% value on the U-L and U-K data:
+      <ul>
+        <li><b>corrected motions</b> ranked significantly higher in <b>more than 70\% of the cases</b> for all factors</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>footskate cleanup experiment</h1>
+  <h2>to correct or not to correct</h2>
+  <img src="images/UK-UL.svg">
+  <ul>
+    <li><span class="gray">t-test against 50\% value on the U-L and U-K data:</span>
+      <ul>
+        <li class="gray"><b>corrected motions</b> ranked significantly higher in <b>more than 70\% of the cases</b> for all factors</li>
+        <li>therefore, <b>correcting the footsliding is always preferred to not correcting it</b>, even if it implies large changes to the motion</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>footskate cleanup experiment</h1>
+  <h2>to correct or not to correct</h2>
+  <img src="images/UK-UL.svg">
+  <ul>
+    <li class="gray">t-test against 50\% value on the U-L and U-K data:
+      <ul>
+        <li><b>corrected motions</b> ranked significantly higher in <b>more than 70\% of the cases</b> for all factors</li>
+        <li>therefore, <b>correcting the footsliding is always preferred to not correcting it</b>, even if it implies large changes to the motion</li>
+      </ul>
+    </li>
+
+    <li>3-way repeated ANOVA on combined U-K and U-L data
+    </li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>footskate cleanup experiment</h1>
+  <h2>to correct or not to correct</h2>
+  <img src="images/UK-UL.svg">
+  <ul>
+    <li class="gray">t-test against 50\% value on the U-L and U-K data:
+      <ul>
+        <li><b>corrected motions</b> ranked significantly higher in <b>more than 70\% of the cases</b> for all factors</li>
+        <li>therefore, <b>correcting the footsliding is always preferred to not correcting it</b>, even if it implies large changes to the motion</li>
+      </ul>
+    </li>
+
+    <li><span class="gray">3-way repeated ANOVA on combined U-K and U-L data</span>
+      <ul>
+        <li><b>comparison</b> (U-K, U-L) - <b>significant</b></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>footskate cleanup experiment</h1>
+  <h2>to correct or not to correct</h2>
+  <img src="images/fixups_fixnofix.svg" style="height: 55%;">
+  <ul>
+    <li class="gray">t-test against 50\% value on the U-L and U-K data:
+      <ul>
+        <li><b>corrected motions</b> ranked significantly higher in <b>more than 70\% of the cases</b> for all factors</li>
+        <li>therefore, <b>correcting the footsliding is always preferred to not correcting it</b>, even if it implies large changes to the motion</li>
+      </ul>
+    </li>
+
+    <li><span class="gray">3-way repeated ANOVA on combined U-K and U-L data</span>
+      <ul>
+        <li class="gray"><b>comparison</b> (U-K, U-L) - <b>significant</b></li>
+        <li><b>footsliding level</b> (50\%, 75\%, 99\%) - <b>significant</b></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>footskate cleanup experiment</h1>
+  <h2>to correct or not to correct</h2>
+  <ul>
+    <li class="gray">t-test against 50\% value on the U-L and U-K data:
+      <ul>
+        <li><b>corrected motions</b> ranked significantly higher in <b>more than 70\% of the cases</b> for all factors</li>
+        <li>therefore, <b>correcting the footsliding is always preferred to not correcting it</b>, even if it implies large changes to the motion</li>
+      </ul>
+    </li>
+
+    <li><span class="gray">3-way repeated ANOVA on combined U-K and U-L data</span>
+      <ul>
+        <li class="gray"><b>comparison</b> (U-K, U-L) - <b>significant</b></li>
+        <li class="gray"><b>footsliding level</b> (50\%, 75\%, 99\%) - <b>significant</b></li>
+        <li><b>direction</b> (gliding, moonwalking) - not significant</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+
+
+<div class="slide">
+  <h1>footskate cleanup experiment</h1>
+  <h2>preferred correction method</h2>
+  <img src="images/KL.svg">
+  <ul>
+    <li>a single t-test against 50\% value on the collapsed K-L data:
+      <ul>
+        <li>lengthening ranked significantly higher in <b>72\% of the trials</b></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>footskate cleanup experiment</h1>
+  <h2>preferred correction method</h2>
+  <img src="images/KL.svg">
+  <ul>
+    <li class="gray">a single t-test against 50\% value on the collapsed K-L data:
+      <ul>
+        <li>lengthening ranked significantly higher in <b>72\% of the trials</b></li>
+      </ul>
+    </li>
+
+    <li>2-way repeated ANOVA on K-L data with factors:
+      <ul>
+        <li><b>direction</b> (gliding, moonwalking)</li>
+        <li><b>footsliding level</b> (50\%, 75\%, 99\%)</li>
+      </ul>
+    </li>
+    <li><b>no significant effects found</b><br></li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>conclusions and future work</h1>
+  <ul>
+    <li>even <b>very small levels of footsliding are perceivable</b>
+      <ul>
+        <li>especially when environment cues are provided</li>
+      </ul>
+    </li>
+    <li>correcting is <b>always preferred</b> to not correcting</li>
+    <li>of the two tested method, the simpler <b>limb lengthening</b> method is preferred<br></li>
+    
+    <li>future work:
+      <ul>
+        <li>test more realistic characters</li>
+        <li>test general limb-lengthening saliency on humanoid characters</li>
+        <li>test effects of camera angle and motion</li>
+        <li>test effects of user's attention</li>
+        <li>different motions than walking</li>
+      </ul>
+    </li>
+  </ul>
+  
+  
+</div>
+
+<div class="slide">
+  <h1 style="position: absolute; top: 25%; padding: 0.3em 2em 0.3em 1em;text-align:left;font-size: 2.5em;display:inline-block;margin: 0;">perceptual evaluation <br>of footskate cleanup</h1>
+  <p style="text-align:left;position: absolute; bottom: 1em;padding:0 0 1em 2.5em; margin: 0;">
+    <b>Martin Prazak<br>Ludovic Hoyet<br>Carol O'Sullivan</b>
+    <br><br>
+    Graphics, Vision and Visualisation Group<br>
+    Department of Computer Science and Statistics<br>
+    Trinity College Dublin, Ireland
+  </p>
+</div>
+
+<div class="slide" onshow="//alert('showing something...')" onhide="//alert('hiding something...')" >
+  <h1>baseline experiment</h1>
+  <h2>experiment procedure</h2>
+  <ul>
+    <li>adaptive <b>staircase procedure</b>, yes/no variant
+      <ul>
+        <li>designed according to Garcia-Perez: <i>Yes-no staircases with fixed step sizes: psychometric properties and optimal setup</i>, 2001</li>
+        <li>double staircase (+ two variants running at the same time)</li>
+        <li>fixed up and down steps</li>
+        <li>down/up step ratio of 0.871</li>
+        <li>convergence at 52.38%</li>
+        <li>stopping condition at 20 reversals</li>
+      </ul>
+    </li>
+  </ul>  
+</div>
+
+
+<!--********************************************************************************************************************************
+    ********************************************************************************************************************************
+    ********************************************************************************************************************************-->
+
+</body>
+
+</html>
