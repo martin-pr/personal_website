@@ -2,10 +2,10 @@
 # Basic
 #
 site_title: mprazak.info            # The title of your website
-#base_url: ~                        # Pico will try to guess its base URL, if this fails, override it here;
+#base_url: http://localhost/~martin                        # Pico will try to guess its base URL, if this fails, override it here;
                                     #     Example: https://example.com/pico/
-#rewrite_url: ~                     # A boolean (true or false) indicating whether URL rewriting is forced
-#debug: ~                           # Set this to true to enable Pico's debug mode
+#rewrite_url: false                     # A boolean (true or false) indicating whether URL rewriting is forced
+#debug: true                           # Set this to true to enable Pico's debug mode
 #timezone: ~                        # Your PHP installation might require you to manually specify a timezone
 
 ##
@@ -32,10 +32,10 @@ theme: mprazak.info                 # The name of your custom theme
 #pages_order_by_meta: author         # Sort pages by meta value "author" (set "pages_order_by" to "meta")
 #pages_order_by: alpha               # Change how Pico sorts pages ("alpha" for alphabetical order, "date", or "meta")
 #pages_order: asc                    # Sort pages in ascending ("asc") or descending ("desc") order
-#content_dir: ~                      # The path to Pico's content directory
-#content_ext: .md                    # The file extension of your Markdown files
-#content_config:                     # Parsedown Markdown parser config
-#    extra: true                     # Use the Parsedown Extra parser to support extended markup;
+content_dir: content                      # The path to Pico's content directory
+content_ext: .md                    # The file extension of your Markdown files
+content_config:                     # Parsedown Markdown parser config
+    extra: false                     # Use the Parsedown Extra parser to support extended markup;
 #                                    #     See https://michelf.ca/projects/php-markdown/extra/ for more info
 #    breaks: false                   # A boolean indicating whether breaks in the markup should be reflected in the
 #                                    #     parsed contents of the page
