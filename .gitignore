@@ -11,5 +11,5 @@ desktop.ini
 ._*
 
 # Composer
-/composer.phar
+# /composer.phar
 # /vendor
